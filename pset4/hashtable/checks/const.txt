@@ -1,0 +1,44 @@
+
+MISSPELLED WORDS
+
+USConstitution
+http
+usconstitution
+const
+html
+tempore
+Impeachments
+Nays
+Nays
+repassed
+Piracies
+Felonies
+attainted
+Langdon
+Gilman
+Brearley
+Mifflin
+Clymer
+Fitzsimons
+Jared
+Gouvernour
+McHenry
+Jenifer
+Blount
+Spaight
+Cotesworth
+tempore
+tempore
+tempore
+tempore
+Cache size: 24
+
+WORDS MISSPELLED:     30
+WORDS IN DICTIONARY:  143091
+WORDS IN TEXT:        7573
+TIME IN load:         0.03
+TIME IN check:        0.36
+TIME IN size:         0.00
+TIME IN unload:       0.00
+TIME IN TOTAL:        0.40
+

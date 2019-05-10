@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+
+    <div class="col">
+        <form action="/compare" enctype="multipart/form-data" method="post">
+            <div class="form-group">
+                <label for="file1">File to compare</label>
+                <input type="file" name="file1" class="form-control-file">
+            </div>
+            <div class="form-group">
+                <label for="file2">File to compare to</label>
+                <input type="file" name="file2" class="form-control-file">
+            </div>
+            <div class="form-group">
+                <h6>Algorithm</h6>
+                <div class="form-check-inline">
+                    <label for="algorithm" class="form-check-label">
+                        <input type="radio" name="algorithm" value="lines" class="form-check-input">&nbsp;&nbsp;Lines
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label for="algorithm" class="form-check-label">
+                        <input type="radio" name="algorithm" value="sentences" class="form-check-input">&nbsp;&nbsp;Sentences
+                    </label>
+                </div>
+                <div class="form-check-inline">
+                    <label for="algorithm" class="form-check-label">
+                        <input type="radio" name="algorithm" value="substrings" class="form-check-input">&nbsp;&nbsp;Substrings
+                    </label>
+                </div>
+            </div>
+            <div class="form-group d-none substrings-length">
+                <label for="length">Substring Length</label>
+                <input type="number" name="length" class="form-control col-sm-2">
+            </div>
+            <button type="submit" class="btn btn-outline-secondary">Compare</button>
+        </form>
+    </div>
+
+<script>
+(function() {
+    let algos = document.querySelectorAll('input[name=algorithm]');
+    for (let i = 0; i < algos.length; i ++) {
+       algos[i].addEventListener('change', function(event) {
+        $('div.substrings-length').toggleClass('d-none', !$('input[name=algorithm][value=substrings]').is(':checked'));
+    });
+}
+})();
+</script>
+
+{% endblock %}

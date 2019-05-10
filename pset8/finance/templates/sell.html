@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell Stock Shares
+{% endblock %}
+
+{% block main %}
+    <form action="/sell" method="post">
+        <div class="form-group">
+            <select {% if not symbol %} autofocus {% endif %} class="form-control" name="symbol" required>
+                <option value="">Select Stock</option>
+                {% for row in rows %}
+                <option value="{{ row['symbol'] }}" {% if symbol and symbol==row.symbol %} selected {% endif %}>
+                    {{ row['symbol'] }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <input class="form-control" name="shares" placeholder="Shares" type="number"
+                value="{{ max_stocks }}" required {% if symbol %} autofocus {% endif %}>
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+{% endblock %}

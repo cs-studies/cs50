@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    My Stocks
+{% endblock %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/tables/ -->
+    <table class="table table-hover">
+      <caption>My Stocks</caption>
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Company</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for row in rows %}
+            <tr>
+                <td>
+                  <strong>{{ row['symbol'] }}</strong>
+                  <p><a href="/buy?symbol={{ row['symbol'] }}" class="text-success">buy</a></small>&nbsp;&nbsp;
+                  <a href="/sell?symbol={{ row['symbol'] }}" class="text-danger">sell</a></p>
+                </td>
+                <td>{{ row['name'] }}</td>
+                <td>{{ row['sum_shares'] }}</td>
+                <td>{{ row['price'] }}</td>
+                <td>{{ row['total'] }}</td>
+            </tr>
+          {% endfor %}
+            <tr>
+              <td>CASH</td>
+              <td colspan=3></td>
+              <td>{{ user_cash }}</td>
+            </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan=4></td>
+          <td>{{ total }}</td>
+        </tr>
+      </tfoot>
+    </table>
+
+{% endblock %}

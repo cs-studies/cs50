@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Stock Data
+{% endblock %}
+
+{% block main %}
+    <dl class="row">
+        <dt class="col-sm-3">Stock Symbol</dt>
+        <dd class="col-sm-9">{{ quote['symbol'] }}</dd>
+        <dt class="col-sm-3">Company</dt>
+        <dd class="col-sm-9">{{ quote['name'] }}</dd>
+        <dt class="col-sm-3">Price</dt>
+        <dd class="col-sm-9">{{ quote['priceFormatted'] }}</dd>
+    </dl>
+{% endblock %}

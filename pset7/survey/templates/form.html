@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/typography/ -->
+    <h1 class="mb-3">Video Games</h1>
+
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form action="/form" method="post" novalidate class="bootstrap-validation">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control col-sm-6 col-lg-4" placeholder="God of War" required>
+                <div class="invalid-feedback">
+                  What is the game name?
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Year Released</label>
+                <input type="number" name="year" class="form-control col-sm-2 col-lg-1" placeholder="2018"  required>
+                <div class="invalid-feedback">
+                  When was it released?
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Genre</label>
+                <select class="form-control col-sm-6 col-lg-3" name="genre" required>
+                  <option value="">Select</option>
+                  <option value="action">Action</option>
+                  <option value="action-adventure">Action-adventure</option>
+                  <option value="adventure">Adventure</option>
+                  <option value="role-playing">Role-playing</option>
+                  <option value="simulation">Simulation</option>
+                  <option value="strategy">Strategy</option>
+                  <option value="sports">Sports</option>
+                </select>
+                <div class="invalid-feedback">
+                  What's this game genre?
+                </div>
+            </div>
+            <label>Impression</label>
+            <div class="form-group">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="rating" value="0" class="form-check-input" required>&nbsp;Took a look, meh
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="rating" value="1" class="form-check-input" required>&nbsp;Had my minutes of fun
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="rating" value="2" class="form-check-input" required>&nbsp;Spent enjoyable hours with it
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="rating" value="3" class="form-check-input" required>&nbsp;Was engaged for a week or so
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" name="rating" value="4" class="form-check-input" required>&nbsp;Awesome, played it all and can go on!
+                        <span class="invalid-feedback">
+                            Did you like it?
+                        </span>
+                    </label>
+                </div>
+            </div>
+
+
+        <!-- http://getbootstrap.com/docs/4.1/components/buttons/ -->
+        <button class="btn btn-outline-info" type="submit">Submit</button>
+
+    </form>
+
+    <script>
+        (function() {
+            'use strict';
+          window.addEventListener('load', function() {
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.getElementsByClassName('bootstrap-validation');
+            // Loop over them and prevent submission
+            var validation = Array.prototype.filter.call(forms, function(form) {
+              form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                  event.preventDefault();
+                  event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+              }, false);
+            });
+          }, false);
+        })();
+    </script>
+
+{% endblock %}

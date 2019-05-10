@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Transactions History
+{% endblock %}
+
+{% block main %}
+
+    <!-- http://getbootstrap.com/docs/4.1/content/tables/ -->
+    <table class="table table-hover">
+      <caption>Transactions History</caption>
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">Symbol</th>
+          <th scope="col">Shares</th>
+          <th scope="col">Price</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for row in rows %}
+            <tr>
+                <td>{{ row['symbol'] }}</td>
+                <td>{{ row['shares'] }}</td>
+                <td>{{ row['price'] }}</td>
+                <td>{{ row['created'] }}</td>
+            </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+
+{% endblock %}
