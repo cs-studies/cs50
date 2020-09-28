@@ -1,4 +1,4 @@
-CS50 Program Sets Solutions
+CS50 Problem Sets Solutions
 ===
 
 CS50 is Harvard's introduction course to computer science.
