@@ -11,6 +11,8 @@ This repository contains **solutions** to the problem sets that were included in
 
 ### Prerequisites
 - Willing to learn.
+- [Discrete mathematics](https://www.amazon.com/Discrete-Mathematics-Applications-Susanna-Epp-dp-1337694193/dp/1337694193/) may help with some tasks, particularly with permutations.
+
 
 ### Resources
 - [CS50: Introduction to Computer Science](https://online-learning.harvard.edu/course/cs50-introduction-computer-science?delta=0)
