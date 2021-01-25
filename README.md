@@ -9,6 +9,9 @@ The course's author Prof David J. Malan is an incredibly energetic person who ha
 
 This repository contains **solutions** to the problem sets that were included in the 2018 / 2019 CS50 syllabus.
 
+**Please respect the policy of the course! Only use the provided solutions if you're a self-studying person and put your best effort to solving the problems.**
+
+
 ### Prerequisites
 - Willing to learn.
 - [Discrete mathematics](https://www.amazon.com/Discrete-Mathematics-Applications-Susanna-Epp-dp-1337694193/dp/1337694193/) may help with some tasks, particularly with permutations.
